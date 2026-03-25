@@ -1,0 +1,16 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "this is a new project form the chai aur code youtube channel it resembels to making a clone of youtube",
+  "keywords": [
+    "fullstack",
+    "youtubeclone"
+  ],
+  "license": "ISC",
+  "author": "Swastik Chatterjee",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
