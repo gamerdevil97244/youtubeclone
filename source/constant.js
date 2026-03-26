@@ -1,1 +1,1 @@
-export const DatabaseName = "youtube_project "
+export const DatabaseName = "youtube_project"
