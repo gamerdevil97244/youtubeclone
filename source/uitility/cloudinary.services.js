@@ -1,4 +1,4 @@
-import { v2 as cloudinary } from 'cloudinary'
+import { v2 as cloudinary, v2 } from 'cloudinary'
 import fs from 'fs'
 
 cloudinary.config({ 
@@ -7,6 +7,23 @@ cloudinary.config({
   api_secret: process.env.Cloudinary_CloudStorage_APISecret_Key
 });
 
-cloudinary.uploader
-  .upload("my_image.jpg")
-  .then(result=>console.log(result));
+async function fileUpload(fileURL) {
+  try {
+    if (!fileURL) {
+      console.log("file path is"+fileURL);
+      
+    }
+    cloudinaryImgres = await cloudinary.v2.uploader.upload(fileURL,{
+      resourceType : "auto"
+    })
+
+    console.log("uploaded"+cloudinaryImgres)
+    
+  } catch (error) {
+    fs.unlink(fileURL)
+    
+  }
+  return;
+}
+
+module.exports = fileUpload
